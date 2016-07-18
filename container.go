@@ -808,99 +808,99 @@ func (c *Client) TopContainer(id string, psArgs string) (TopResult, error) {
 //
 // See https://goo.gl/GNmLHb for more details.
 type Stats struct {
-	Read      time.Time `json:"read,omitempty" yaml:"read,omitempty"`
+	Read      time.Time `json:"read" yaml:"read"`
 	PidsStats struct {
-		Current uint64 `json:"current,omitempty" yaml:"current,omitempty"`
-	} `json:"pids_stats,omitempty" yaml:"pids_stats,omitempty"`
-	Network     NetworkStats            `json:"network,omitempty" yaml:"network,omitempty"`
-	Networks    map[string]NetworkStats `json:"networks,omitempty" yaml:"networks,omitempty"`
+		Current uint64 `json:"current" yaml:"current"`
+	} `json:"pids_stats" yaml:"pids_stats"`
+	Network     NetworkStats            `json:"network" yaml:"network"`
+	Networks    map[string]NetworkStats `json:"networks" yaml:"networks"`
 	MemoryStats struct {
 		Stats struct {
-			TotalPgmafault          uint64 `json:"total_pgmafault,omitempty" yaml:"total_pgmafault,omitempty"`
-			Cache                   uint64 `json:"cache,omitempty" yaml:"cache,omitempty"`
-			MappedFile              uint64 `json:"mapped_file,omitempty" yaml:"mapped_file,omitempty"`
-			TotalInactiveFile       uint64 `json:"total_inactive_file,omitempty" yaml:"total_inactive_file,omitempty"`
-			Pgpgout                 uint64 `json:"pgpgout,omitempty" yaml:"pgpgout,omitempty"`
-			Rss                     uint64 `json:"rss,omitempty" yaml:"rss,omitempty"`
-			TotalMappedFile         uint64 `json:"total_mapped_file,omitempty" yaml:"total_mapped_file,omitempty"`
-			Writeback               uint64 `json:"writeback,omitempty" yaml:"writeback,omitempty"`
-			Unevictable             uint64 `json:"unevictable,omitempty" yaml:"unevictable,omitempty"`
-			Pgpgin                  uint64 `json:"pgpgin,omitempty" yaml:"pgpgin,omitempty"`
-			TotalUnevictable        uint64 `json:"total_unevictable,omitempty" yaml:"total_unevictable,omitempty"`
-			Pgmajfault              uint64 `json:"pgmajfault,omitempty" yaml:"pgmajfault,omitempty"`
-			TotalRss                uint64 `json:"total_rss,omitempty" yaml:"total_rss,omitempty"`
-			TotalRssHuge            uint64 `json:"total_rss_huge,omitempty" yaml:"total_rss_huge,omitempty"`
-			TotalWriteback          uint64 `json:"total_writeback,omitempty" yaml:"total_writeback,omitempty"`
-			TotalInactiveAnon       uint64 `json:"total_inactive_anon,omitempty" yaml:"total_inactive_anon,omitempty"`
-			RssHuge                 uint64 `json:"rss_huge,omitempty" yaml:"rss_huge,omitempty"`
-			HierarchicalMemoryLimit uint64 `json:"hierarchical_memory_limit,omitempty" yaml:"hierarchical_memory_limit,omitempty"`
-			TotalPgfault            uint64 `json:"total_pgfault,omitempty" yaml:"total_pgfault,omitempty"`
-			TotalActiveFile         uint64 `json:"total_active_file,omitempty" yaml:"total_active_file,omitempty"`
-			ActiveAnon              uint64 `json:"active_anon,omitempty" yaml:"active_anon,omitempty"`
-			TotalActiveAnon         uint64 `json:"total_active_anon,omitempty" yaml:"total_active_anon,omitempty"`
-			TotalPgpgout            uint64 `json:"total_pgpgout,omitempty" yaml:"total_pgpgout,omitempty"`
-			TotalCache              uint64 `json:"total_cache,omitempty" yaml:"total_cache,omitempty"`
-			InactiveAnon            uint64 `json:"inactive_anon,omitempty" yaml:"inactive_anon,omitempty"`
-			ActiveFile              uint64 `json:"active_file,omitempty" yaml:"active_file,omitempty"`
-			Pgfault                 uint64 `json:"pgfault,omitempty" yaml:"pgfault,omitempty"`
-			InactiveFile            uint64 `json:"inactive_file,omitempty" yaml:"inactive_file,omitempty"`
-			TotalPgpgin             uint64 `json:"total_pgpgin,omitempty" yaml:"total_pgpgin,omitempty"`
-			HierarchicalMemswLimit  uint64 `json:"hierarchical_memsw_limit,omitempty" yaml:"hierarchical_memsw_limit,omitempty"`
-			Swap                    uint64 `json:"swap,omitempty" yaml:"swap,omitempty"`
-		} `json:"stats,omitempty" yaml:"stats,omitempty"`
-		MaxUsage uint64 `json:"max_usage,omitempty" yaml:"max_usage,omitempty"`
-		Usage    uint64 `json:"usage,omitempty" yaml:"usage,omitempty"`
-		Failcnt  uint64 `json:"failcnt,omitempty" yaml:"failcnt,omitempty"`
-		Limit    uint64 `json:"limit,omitempty" yaml:"limit,omitempty"`
-	} `json:"memory_stats,omitempty" yaml:"memory_stats,omitempty"`
+			TotalPgmafault          uint64 `json:"total_pgmafault" yaml:"total_pgmafault"`
+			Cache                   uint64 `json:"cache" yaml:"cache"`
+			MappedFile              uint64 `json:"mapped_file" yaml:"mapped_file"`
+			TotalInactiveFile       uint64 `json:"total_inactive_file" yaml:"total_inactive_file"`
+			Pgpgout                 uint64 `json:"pgpgout" yaml:"pgpgout"`
+			Rss                     uint64 `json:"rss" yaml:"rss"`
+			TotalMappedFile         uint64 `json:"total_mapped_file" yaml:"total_mapped_file"`
+			Writeback               uint64 `json:"writeback" yaml:"writeback"`
+			Unevictable             uint64 `json:"unevictable" yaml:"unevictable"`
+			Pgpgin                  uint64 `json:"pgpgin" yaml:"pgpgin"`
+			TotalUnevictable        uint64 `json:"total_unevictable" yaml:"total_unevictable"`
+			Pgmajfault              uint64 `json:"pgmajfault" yaml:"pgmajfault"`
+			TotalRss                uint64 `json:"total_rss" yaml:"total_rss"`
+			TotalRssHuge            uint64 `json:"total_rss_huge" yaml:"total_rss_huge"`
+			TotalWriteback          uint64 `json:"total_writeback" yaml:"total_writeback"`
+			TotalInactiveAnon       uint64 `json:"total_inactive_anon" yaml:"total_inactive_anon"`
+			RssHuge                 uint64 `json:"rss_huge" yaml:"rss_huge"`
+			HierarchicalMemoryLimit uint64 `json:"hierarchical_memory_limit" yaml:"hierarchical_memory_limit"`
+			TotalPgfault            uint64 `json:"total_pgfault" yaml:"total_pgfault"`
+			TotalActiveFile         uint64 `json:"total_active_file" yaml:"total_active_file"`
+			ActiveAnon              uint64 `json:"active_anon" yaml:"active_anon"`
+			TotalActiveAnon         uint64 `json:"total_active_anon" yaml:"total_active_anon"`
+			TotalPgpgout            uint64 `json:"total_pgpgout" yaml:"total_pgpgout"`
+			TotalCache              uint64 `json:"total_cache" yaml:"total_cache"`
+			InactiveAnon            uint64 `json:"inactive_anon" yaml:"inactive_anon"`
+			ActiveFile              uint64 `json:"active_file" yaml:"active_file"`
+			Pgfault                 uint64 `json:"pgfault" yaml:"pgfault"`
+			InactiveFile            uint64 `json:"inactive_file" yaml:"inactive_file"`
+			TotalPgpgin             uint64 `json:"total_pgpgin" yaml:"total_pgpgin"`
+			HierarchicalMemswLimit  uint64 `json:"hierarchical_memsw_limit" yaml:"hierarchical_memsw_limit"`
+			Swap                    uint64 `json:"swap" yaml:"swap"`
+		} `json:"stats" yaml:"stats"`
+		MaxUsage uint64 `json:"max_usage" yaml:"max_usage"`
+		Usage    uint64 `json:"usage" yaml:"usage"`
+		Failcnt  uint64 `json:"failcnt" yaml:"failcnt"`
+		Limit    uint64 `json:"limit" yaml:"limit"`
+	} `json:"memory_stats" yaml:"memory_stats"`
 	BlkioStats struct {
-		IOServiceBytesRecursive []BlkioStatsEntry `json:"io_service_bytes_recursive,omitempty" yaml:"io_service_bytes_recursive,omitempty"`
-		IOServicedRecursive     []BlkioStatsEntry `json:"io_serviced_recursive,omitempty" yaml:"io_serviced_recursive,omitempty"`
-		IOQueueRecursive        []BlkioStatsEntry `json:"io_queue_recursive,omitempty" yaml:"io_queue_recursive,omitempty"`
-		IOServiceTimeRecursive  []BlkioStatsEntry `json:"io_service_time_recursive,omitempty" yaml:"io_service_time_recursive,omitempty"`
-		IOWaitTimeRecursive     []BlkioStatsEntry `json:"io_wait_time_recursive,omitempty" yaml:"io_wait_time_recursive,omitempty"`
-		IOMergedRecursive       []BlkioStatsEntry `json:"io_merged_recursive,omitempty" yaml:"io_merged_recursive,omitempty"`
-		IOTimeRecursive         []BlkioStatsEntry `json:"io_time_recursive,omitempty" yaml:"io_time_recursive,omitempty"`
-		SectorsRecursive        []BlkioStatsEntry `json:"sectors_recursive,omitempty" yaml:"sectors_recursive,omitempty"`
-	} `json:"blkio_stats,omitempty" yaml:"blkio_stats,omitempty"`
-	CPUStats    CPUStats `json:"cpu_stats,omitempty" yaml:"cpu_stats,omitempty"`
-	PreCPUStats CPUStats `json:"precpu_stats,omitempty"`
+		IOServiceBytesRecursive []BlkioStatsEntry `json:"io_service_bytes_recursive" yaml:"io_service_bytes_recursive"`
+		IOServicedRecursive     []BlkioStatsEntry `json:"io_serviced_recursive" yaml:"io_serviced_recursive"`
+		IOQueueRecursive        []BlkioStatsEntry `json:"io_queue_recursive" yaml:"io_queue_recursive"`
+		IOServiceTimeRecursive  []BlkioStatsEntry `json:"io_service_time_recursive" yaml:"io_service_time_recursive"`
+		IOWaitTimeRecursive     []BlkioStatsEntry `json:"io_wait_time_recursive" yaml:"io_wait_time_recursive"`
+		IOMergedRecursive       []BlkioStatsEntry `json:"io_merged_recursive" yaml:"io_merged_recursive"`
+		IOTimeRecursive         []BlkioStatsEntry `json:"io_time_recursive" yaml:"io_time_recursive"`
+		SectorsRecursive        []BlkioStatsEntry `json:"sectors_recursive" yaml:"sectors_recursive"`
+	} `json:"blkio_stats" yaml:"blkio_stats"`
+	CPUStats    CPUStats `json:"cpu_stats" yaml:"cpu_stats"`
+	PreCPUStats CPUStats `json:"precpu_stats"`
 }
 
 // NetworkStats is a stats entry for network stats
 type NetworkStats struct {
-	RxDropped uint64 `json:"rx_dropped,omitempty" yaml:"rx_dropped,omitempty"`
-	RxBytes   uint64 `json:"rx_bytes,omitempty" yaml:"rx_bytes,omitempty"`
-	RxErrors  uint64 `json:"rx_errors,omitempty" yaml:"rx_errors,omitempty"`
-	TxPackets uint64 `json:"tx_packets,omitempty" yaml:"tx_packets,omitempty"`
-	TxDropped uint64 `json:"tx_dropped,omitempty" yaml:"tx_dropped,omitempty"`
-	RxPackets uint64 `json:"rx_packets,omitempty" yaml:"rx_packets,omitempty"`
-	TxErrors  uint64 `json:"tx_errors,omitempty" yaml:"tx_errors,omitempty"`
-	TxBytes   uint64 `json:"tx_bytes,omitempty" yaml:"tx_bytes,omitempty"`
+	RxDropped uint64 `json:"rx_dropped" yaml:"rx_dropped"`
+	RxBytes   uint64 `json:"rx_bytes" yaml:"rx_bytes"`
+	RxErrors  uint64 `json:"rx_errors" yaml:"rx_errors"`
+	TxPackets uint64 `json:"tx_packets" yaml:"tx_packets"`
+	TxDropped uint64 `json:"tx_dropped" yaml:"tx_dropped"`
+	RxPackets uint64 `json:"rx_packets" yaml:"rx_packets"`
+	TxErrors  uint64 `json:"tx_errors" yaml:"tx_errors"`
+	TxBytes   uint64 `json:"tx_bytes" yaml:"tx_bytes"`
 }
 
 // CPUStats is a stats entry for cpu stats
 type CPUStats struct {
 	CPUUsage struct {
-		PercpuUsage       []uint64 `json:"percpu_usage,omitempty" yaml:"percpu_usage,omitempty"`
-		UsageInUsermode   uint64   `json:"usage_in_usermode,omitempty" yaml:"usage_in_usermode,omitempty"`
-		TotalUsage        uint64   `json:"total_usage,omitempty" yaml:"total_usage,omitempty"`
-		UsageInKernelmode uint64   `json:"usage_in_kernelmode,omitempty" yaml:"usage_in_kernelmode,omitempty"`
-	} `json:"cpu_usage,omitempty" yaml:"cpu_usage,omitempty"`
-	SystemCPUUsage uint64 `json:"system_cpu_usage,omitempty" yaml:"system_cpu_usage,omitempty"`
+		PercpuUsage       []uint64 `json:"percpu_usage" yaml:"percpu_usage"`
+		UsageInUsermode   uint64   `json:"usage_in_usermode" yaml:"usage_in_usermode"`
+		TotalUsage        uint64   `json:"total_usage" yaml:"total_usage"`
+		UsageInKernelmode uint64   `json:"usage_in_kernelmode" yaml:"usage_in_kernelmode"`
+	} `json:"cpu_usage" yaml:"cpu_usage"`
+	SystemCPUUsage uint64 `json:"system_cpu_usage" yaml:"system_cpu_usage"`
 	ThrottlingData struct {
-		Periods          uint64 `json:"periods,omitempty"`
-		ThrottledPeriods uint64 `json:"throttled_periods,omitempty"`
-		ThrottledTime    uint64 `json:"throttled_time,omitempty"`
-	} `json:"throttling_data,omitempty" yaml:"throttling_data,omitempty"`
+		Periods          uint64 `json:"periods"`
+		ThrottledPeriods uint64 `json:"throttled_periods"`
+		ThrottledTime    uint64 `json:"throttled_time"`
+	} `json:"throttling_data" yaml:"throttling_data"`
 }
 
 // BlkioStatsEntry is a stats entry for blkio_stats
 type BlkioStatsEntry struct {
-	Major uint64 `json:"major,omitempty" yaml:"major,omitempty"`
-	Minor uint64 `json:"minor,omitempty" yaml:"minor,omitempty"`
-	Op    string `json:"op,omitempty" yaml:"op,omitempty"`
-	Value uint64 `json:"value,omitempty" yaml:"value,omitempty"`
+	Major uint64 `json:"major" yaml:"major"`
+	Minor uint64 `json:"minor" yaml:"minor"`
+	Op    string `json:"op" yaml:"op"`
+	Value uint64 `json:"value" yaml:"value"`
 }
 
 // StatsOptions specify parameters to the Stats function.
